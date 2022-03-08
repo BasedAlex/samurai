@@ -7,11 +7,11 @@ let state = {
 	},
 	dialogPage: {
 		messages: [
-			{ id: 1, message: 'Hi' },
-			{ id: 2, message: 'How is your nothing?' },
-			{ id: 3, message: 'Yo' },
-			{ id: 4, message: 'Yo' },
-			{ id: 5, message: 'Yo' },
+			{ id: 1, message: 'Hi', owner: 'main' },
+			{ id: 2, message: 'How is your nothing?', owner: 'main' },
+			{ id: 3, message: 'Yo', owner: 'main' },
+			{ id: 4, message: 'Yo', owner: 'guest' },
+			{ id: 5, message: 'Fine thank you! hbu?', owner: 'guest' },
 		],
 		dialogs: [
 			{ id: 1, name: 'Alex' },
