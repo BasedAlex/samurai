@@ -2,6 +2,7 @@ import React from 'react'
 // import state from '../../redux/state'
 // import s from './../Dialogs.module.css'
 import './Message.module.css'
+import { useRef } from 'react'
 
 let newMessage = React.createRef()
 
@@ -10,6 +11,29 @@ let addMessage = () => {
 	alert(text)
 }
 
+export const Message = ({items, setItem}) => {
+	const ref = useRef(null)
+	const newAddMessage = () => {
+		setItem([...items, { id: Math.random(), message: ref.current.value}])
+		ref.current.value = "";
+	}
+
+	return (
+		<div>
+			{items.map((i) => {
+				return (
+					<div>
+						<div key={i.id}>message: {i.message}</div>
+					</div>
+				)
+			})}
+			<textarea ref={ref} />
+			<button onClick={newAddMessage}>Send new message</button>
+		</div>
+	)
+}
+
+/*
 const Message = props => {
 
 	let messageArray;
@@ -40,6 +64,8 @@ const Message = props => {
 			</div>
 		</div>
 )}
+
+ */
 	// // return (
 		// 	// // 	<div>
 		// 	// // 		<div className=> {props.message}</div>

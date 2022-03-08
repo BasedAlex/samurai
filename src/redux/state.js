@@ -6,7 +6,7 @@ let state = {
 		],
 	},
 	dialogPage: {
-		messages: [
+		items: [
 			{ user: 'Alex', message: 'Hi', side: 'main' },
 			{ user: 'Alex', message: 'How is your nothing?', side: 'main' },
 			{ user: 'Alex', message: 'Yo', side: 'main' },
