@@ -4,23 +4,23 @@ import React from 'react'
 import './Message.module.css'
 import { useRef } from 'react'
 
-let newMessage = React.createRef()
+// let newMessage = React.createRef()
 
-let addMessage = () => {
-	let text = newMessage.current.value
-	alert(text)
-}
+// let addMessage = () => {
+// 	let text = newMessage.current.value
+// 	alert(text)
+// }
 
-export const Message = ({items, setItem}) => {
+export const Message = ({ items, setItem }) => {
 	const ref = useRef(null)
 	const newAddMessage = () => {
-		setItem([...items, { id: Math.random(), message: ref.current.value}])
-		ref.current.value = "";
+		setItem([...items, { id: Math.random(), message: ref.current.value }])
+		ref.current.value = ''
 	}
 
 	return (
 		<div>
-			{items.map((i) => {
+			{items.map(i => {
 				return (
 					<div>
 						<div key={i.id}>message: {i.message}</div>
@@ -66,20 +66,20 @@ const Message = props => {
 )}
 
  */
-	// // return (
-		// 	// // 	<div>
-		// 	// // 		<div className=> {props.message}</div>
-		// 	// // 		<div>
-		// 	// // 			<textarea ref={newMessage} ></textarea>
-		// 	// // 			<div>
-		// 	// // 				<button onClick={addMessage}>
-		// 	// // 					Отправить
-		// 	// // 				</button>
-		// 	// // 			</div>
-		// 	// // 		</div>
-		// 	// //
-		// 	// // 	</div>
-		// 	// )
+// // return (
+// 	// // 	<div>
+// 	// // 		<div className=> {props.message}</div>
+// 	// // 		<div>
+// 	// // 			<textarea ref={newMessage} ></textarea>
+// 	// // 			<div>
+// 	// // 				<button onClick={addMessage}>
+// 	// // 					Отправить
+// 	// // 				</button>
+// 	// // 			</div>
+// 	// // 		</div>
+// 	// //
+// 	// // 	</div>
+// 	// )
 
 //
 // name="new-message" cols="30" rows="10"
