@@ -17,14 +17,17 @@ const MyPosts = props => {
 
 	let addPost = () => {
 		let text = newPostElement.current.value
-		props.addPost(text)
-		props.updateNewPostText('')
-		// newPostElement.current.value = ''
+
+		props.dispatch(text, { type: 'ADD-POST' })
+		props.dispatch('', { type: 'ADD-NEW-POST-TEXT' })
+		// console.log(props.dispatch({ type: 'ADD-POST' }, newPost(text)))
+		// props.updateNewPostText('') - обнуляет поле, до диспатча было
 	}
 
 	let onPostChange = () => {
 		let text = newPostElement.current.value
-		props.updateNewPostText(text)
+		props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
+		// props.updateNewPostText(text) - было до диспатча
 	}
 
 	return (
