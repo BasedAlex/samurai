@@ -16,17 +16,17 @@ const MyPosts = props => {
 	let newPostElement = React.createRef()
 
 	let addPost = () => {
-		let text = newPostElement.current.value
-
-		props.dispatch(text, { type: 'ADD-POST' })
-		props.dispatch('', { type: 'ADD-NEW-POST-TEXT' })
+		props.dispatch({ type: 'ADD-POST' })
+		// props.dispatch({ type: 'UPDATE-NEW-POST-TEXT' })
+		// let text = newPostElement.current.value
 		// console.log(props.dispatch({ type: 'ADD-POST' }, newPost(text)))
 		// props.updateNewPostText('') - обнуляет поле, до диспатча было
 	}
 
 	let onPostChange = () => {
 		let text = newPostElement.current.value
-		props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
+		let action = { type: 'UPDATE-NEW-POST-TEXT', newText: text }
+		props.dispatch(action)
 		// props.updateNewPostText(text) - было до диспатча
 	}
 
