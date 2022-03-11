@@ -3,6 +3,7 @@ import React from 'react'
 // import s from './../Dialogs.module.css'
 import './Message.module.css'
 import { useRef } from 'react'
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../redux/state'
 
 // let newMessage = React.createRef()
 
@@ -17,6 +18,15 @@ export const Message = ({ items, setItem }) => {
 		setItem([...items, { id: Math.random(), message: ref.current.value }])
 		ref.current.value = ''
 	}
+	let newMessageBody = items.state.newMessageBody
+
+	let onNewMessageclick = () => {
+		items.store.dispatch(sendMessageCreator())}
+	}
+	let onNewMessageChange = e => {
+		let body = e.target.value
+		items.store.dispatch(updateNewMessageBodyCreator(body))
+	}
 
 	return (
 		<div>
@@ -27,7 +37,7 @@ export const Message = ({ items, setItem }) => {
 					</div>
 				)
 			})}
-			<textarea ref={ref} />
+			<textarea ref={ref} value={newMessageBody} />
 			<button onClick={newAddMessage}>Send new message</button>
 		</div>
 	)
