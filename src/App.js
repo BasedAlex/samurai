@@ -17,9 +17,7 @@ const App = props => {
 					<Routes>
 						<Route
 							path='/dialogs/*'
-							element={
-								<Dialogs store={props.store} dialogs={props.state.dialogPage} />
-							}
+							element={<Dialogs store={props.store} />}
 						/>
 						<Route
 							path='/profile/*'
@@ -32,7 +30,9 @@ const App = props => {
 						/>
 
 						{/* <Route path='/dialogs/*' element={<Dialogs />}></Route>
-						<Route path='/profile/*' element={<Profile />}></Route> */}
+						<Route path='/profile/*' element={<Profile />}></Route> 
+						 dialogs={props.state.dialogPage}
+						*/}
 					</Routes>
 				</div>
 			</div>
