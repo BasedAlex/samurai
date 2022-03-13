@@ -10,14 +10,16 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { Provider } from './StoreContext'
 
 // import state from './redux/state'
 
 let rerenderEntireTree = state => {
-	debugger
 	ReactDOM.render(
 		<React.StrictMode>
-			<App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+			<Provider store={store}>
+				<App />
+			</Provider>
 		</React.StrictMode>,
 		document.getElementById('root')
 	)
