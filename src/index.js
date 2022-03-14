@@ -1,18 +1,11 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom'
 import './index.css'
-// import App from './App'
-
 import store from './redux/redux-store'
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { Provider } from './StoreContext'
-
-// import state from './redux/state'
+import { Provider } from 'react-redux'
 
 let rerenderEntireTree = state => {
 	ReactDOM.render(
