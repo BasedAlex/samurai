@@ -18,8 +18,8 @@ const Navbar = () => {
 				</NavLink>
 			</div>
 			<div className={s.item}>
-				<NavLink to='/news' className={links}>
-					News
+				<NavLink to='/users' className={links}>
+					Users
 				</NavLink>
 			</div>
 			<div className={s.item}>
