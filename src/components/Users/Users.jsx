@@ -3,16 +3,13 @@ import React from 'react'
 import styles from './users.module.css'
 import userPhoto from '../../assets/image/user.png'
 
+const API_URL = 'https://social-network.samuraijs.com/api/1.0/'
+
 class Users extends React.Component {
-	constructor(props) {
-		super(props)
-		if (this.props.users.length === 0) {
-			axios
-				.get('https://social-network.samuraijs.com/api/1.0/users')
-				.then(response => {
-					this.props.setUsers(response.data.items)
-				})
-		}
+	componentDidMount() {
+		axios.get(API_URL + 'users').then(response => {
+			this.props.setUsers(response.data.items)
+		})
 	}
 
 	render() {
